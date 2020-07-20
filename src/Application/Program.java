@@ -2,11 +2,11 @@ package Application;
 
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 import Db.Department;
 import Db.Seller;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 
 
 
@@ -20,7 +20,8 @@ public class Program {
              System.out.println(obj);
              
       Seller seller =  new Seller(21,"Bob","Bob@gmail.com",new Date(0),3000.0,obj);
-
+       SellerDao sellerDao=DaoFactory.createSellerDao();//é uma forma de fazer com que o programa não conheça a implementação,somente a interface
+      
              System.out.println(seller);
 		}
 		catch(Exception e) {
