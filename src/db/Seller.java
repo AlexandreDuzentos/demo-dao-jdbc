@@ -24,6 +24,9 @@ public Seller(Integer id, String name, String email,Date Birthdate, Double baseS
 	this.baseSalary = baseSalary;
 	this.department = department;
 }
+public Seller() {
+	
+}
 
 public Integer getId() {
 	return id;

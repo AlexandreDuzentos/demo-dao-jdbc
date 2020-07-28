@@ -13,6 +13,9 @@ public Department(Integer id,String name) {
 	this.setName(name);
 	this.setId(id);
 }
+public Department() {
+	
+}
 public void setId(Integer id) {
 	this.id=id;
 }

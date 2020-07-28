@@ -4,9 +4,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+
+import com.mysql.jdbc.PreparedStatement;
 
 public class DB {
 	
@@ -55,6 +58,26 @@ public static void closeStatement(Statement ps) {
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
+		}
+	}
+}
+public static void closeResultSet(ResultSet rs) {
+	if(rs!=null) {
+		try {
+			rs.close();
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+	}
+}
+public static void closePreparedStatement(PreparedStatement ps) {
+	if(ps!=null) {
+		try {
+			ps.close();
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
 		}
 	}
 }
