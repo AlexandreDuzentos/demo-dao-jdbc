@@ -3,6 +3,7 @@ package Application;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import Db.Department;
 import Db.Seller;
@@ -14,6 +15,7 @@ import model.dao.SellerDao;
 public class Program {
 
 	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
 		try {
 		
        SellerDao sellerDao=DaoFactory.createSellerDao();//é uma forma de fazer com que o programa não conheça a implementação,somente a interface
@@ -45,6 +47,14 @@ public class Program {
         seller.setName("Martha Waine");
         sellerDao.update(seller);
         System.out.println("Update completed");
+        
+        System.out.println("\n=== TEST 5:seller delete ====");
+        System.out.println("Enter id for delete test: ");
+        int id=sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete completed");
+        
+        sc.close();
    
         
         
