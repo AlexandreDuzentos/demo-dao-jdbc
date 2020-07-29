@@ -16,6 +16,7 @@ public class Program {
 		try {
 		
        SellerDao sellerDao=DaoFactory.createSellerDao();//é uma forma de fazer com que o programa não conheça a implementação,somente a interface
+       System.out.println("=== TEST 1:seller findById ====");
         Seller seller=sellerDao.findById(3);
         System.out.println(seller);
 		}
